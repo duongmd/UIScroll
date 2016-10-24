@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RZs-qb-Oho">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Scroll-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewScroll" extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewScroll" customModule="UIScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,109 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-bU-X5I"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gNC-8g-C7b">
+                                <color key="backgroundColor" red="0.030703529792746154" green="0.030703529792746154" blue="0.030703529792746154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="tJ1-1g-XlT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pxi-KE-Upf"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0x3-dn-lzW"/>
+                            <constraint firstItem="gNC-8g-C7b" firstAttribute="top" secondItem="fNP-bU-X5I" secondAttribute="bottom" constant="1" id="IdP-fs-TeI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gNC-8g-C7b" secondAttribute="bottom" constant="20" id="KKO-Di-M2t"/>
+                            <constraint firstItem="gNC-8g-C7b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="YYr-vb-FdG"/>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dSX-kc-X3x"/>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eFu-2L-tIi"/>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="efd-OK-vYv"/>
+                            <constraint firstAttribute="trailing" secondItem="gNC-8g-C7b" secondAttribute="trailing" constant="16" id="l3m-CC-miS"/>
+                            <constraint firstItem="gNC-8g-C7b" firstAttribute="top" secondItem="fNP-bU-X5I" secondAttribute="bottom" constant="1" id="viM-xg-e7m"/>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x7m-SK-59I"/>
+                            <constraint firstItem="fNP-bU-X5I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zOh-5H-hqL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ScrollView" destination="fNP-bU-X5I" id="Ed4-8u-01u"/>
+                        <outlet property="pagecontroller" destination="gNC-8g-C7b" id="yIS-k2-MFO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="346" y="-1236"/>
+        </scene>
+        <!--List Images-->
+        <scene sceneID="Fii-qN-5dG">
+            <objects>
+                <viewController id="eQw-aV-prC" customClass="ListImages" customModule="UIScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jNK-4B-JcH"/>
+                        <viewControllerLayoutGuide type="bottom" id="IJ4-SO-KHQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="msx-CH-Wr6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzD-wM-S19">
+                                <frame key="frameInset" minX="16" minY="64" width="100" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1" backgroundImage="shop1-0.jpg"/>
+                                <connections>
+                                    <action selector="onTouch:" destination="eQw-aV-prC" eventType="touchUpInside" id="Dey-k0-cpS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZy-Q2-di8">
+                                <frame key="frameInset" minX="16" minY="173" width="100" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2" backgroundImage="shop1-1.jpg"/>
+                                <connections>
+                                    <action selector="onTouch:" destination="eQw-aV-prC" eventType="touchUpInside" id="dMA-F0-G2c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2P-1o-9td">
+                                <frame key="frameInset" minX="16" minY="287" width="100" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="3" backgroundImage="shop1-2.jpg"/>
+                                <connections>
+                                    <action selector="onTouch:" destination="eQw-aV-prC" eventType="touchUpInside" id="Qme-A0-sDS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3yQ-qy-RfW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxg-rm-lpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.39999999999998" y="-1236.4317841079462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aeb-S9-Jp0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RZs-qb-Oho" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xCY-l1-TQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eQw-aV-prC" kind="relationship" relationship="rootViewController" id="4fz-yQ-t4n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C45-tt-Wp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1012" y="-1227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shop1-0.jpg" width="740" height="928"/>
+        <image name="shop1-1.jpg" width="742" height="941"/>
+        <image name="shop1-2.jpg" width="732" height="849"/>
+    </resources>
 </document>
